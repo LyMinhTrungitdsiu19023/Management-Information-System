@@ -120,7 +120,7 @@ def main():
         st.text("WebApp")
 
 
-nav = st.sidebar.radio("Navigate",["Home", "Data", "About Me"])
+nav = st.sidebar.radio("Navigate",["Home", "Data"])
 if nav == "Home":
     if __name__=="__main__":
         main()
@@ -133,9 +133,9 @@ if nav == "Data":
         st.table(data)
     
     plt.show()
-if nav == "About Us":
-    st.balloons()
-    st.title("Swaraj Patil")
-    st.title("Nishad Patil")
-    st.title("Rutik Patil")
-    st.subheader("This is Car Price Prediction Web App")
+# if nav == "About Us":
+#     st.balloons()
+#     st.title("Swaraj Patil")
+#     st.title("Nishad Patil")
+#     st.title("Rutik Patil")
+#     st.subheader("This is Car Price Prediction Web App")
