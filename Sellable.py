@@ -35,7 +35,8 @@ def main():
     st.markdown(html_temp,unsafe_allow_html=True)
     
     st.subheader("What is the name of your car?")
-    car_name = st.text_input("","Enter Here")
+    car_name = st.text_input("","Input Here")
+    
     st.subheader("How old is Your Car")
     Year = st.slider("",min_value = 0,max_value=20,value = 5,step = 1)
     st.subheader("What is showroom price(in VND)?")
