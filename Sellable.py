@@ -37,11 +37,11 @@ def main():
     st.subheader("How old is Your Car")
     Year = st.slider("",min_value = 0,max_value=20,value = 5,step = 1)
     st.subheader("What is showroom price(in VND)?")
-    Present_Price = st.text_input("",placeholder = "Type Here...", key = "int")
+    Present_Price = st.text_input("","Type Here")
     
 
     st.subheader("How many kilometers drived?")
-    Kms_Driven = st.text_input("",placeholder = "Enter Here...", key = "int")
+    Kms_Driven = st.text_input("","Enter Here")
     
 
     st.subheader("How many owners previously had the car(1/2/3)?")
@@ -100,28 +100,27 @@ def main():
     result=""
     if st.button("Predict"):
         
-#         if Present_Price == "Type Here":
-#             st.error("this is an error")
-#             st.text("Enter Showroom Price")
+        if Present_Price == "Type Here":
+            st.error("this is an error")
+            st.text("Enter Showroom Price")
 
-#         if Kms_Driven == "Enter Here":
-#             st.text("Enter how many Kms drived")
+        if Kms_Driven == "Enter Here":
+            st.text("Enter how many Kms drived")
 
         my_bar = st.progress(0)
         for percent_complete in range(100):
             time.sleep(0.01)
             my_bar.progress(percent_complete +1)
-        Price = Present_Price/28701700
-        result=predicting(Price,Kms_Driven,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual)
+        result=predicting(Present_Price,Kms_Driven,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual)
 
     
-    st.success('Selling Price of your Car : {} VND'.format(result*28701700))
+    st.success('Selling Price of your Car : {} L'.format(result))
     if st.button("About"):
         st.text("Car Price Prediction")
         st.text("WebApp")
 
 
-nav = st.sidebar.radio("Navigate",["Home", "Data"])
+nav = st.sidebar.radio("Navigate",["Home", "Data", "About Me"])
 if nav == "Home":
     if __name__=="__main__":
         main()
