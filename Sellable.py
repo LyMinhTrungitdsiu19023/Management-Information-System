@@ -100,19 +100,19 @@ def main():
     result=""
     if st.button("Predict"):
         
-        if Present_Price == "Type Here":
-            st.error("this is an error")
-            st.text("Enter Showroom Price")
+#         if Present_Price == "Type Here":
+#             st.error("this is an error")
+#             st.text("Enter Showroom Price")
 
-        if Kms_Driven == "Enter Here":
-            st.text("Enter how many Kms drived")
+#         if Kms_Driven == "Enter Here":
+#             st.text("Enter how many Kms drived")
 
         my_bar = st.progress(0)
         for percent_complete in range(100):
             time.sleep(0.01)
             my_bar.progress(percent_complete +1)
-        Present_Price = Present_Price//28701700
-        result=predicting(Present_Price,Kms_Driven,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual)
+        Price = Present_Price/28701700
+        result=predicting(Price,Kms_Driven,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual)
 
     
     st.success('Selling Price of your Car : {} VND'.format(result*28701700))
