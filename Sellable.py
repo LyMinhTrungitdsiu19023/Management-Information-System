@@ -33,7 +33,9 @@ def main():
     st.image(image, use_column_width=True)
 
     st.markdown(html_temp,unsafe_allow_html=True)
-
+    
+    st.subheader("What is the name of your car?")
+    car_name = st.text_input("","Enter Here")
     st.subheader("How old is Your Car")
     Year = st.slider("",min_value = 0,max_value=20,value = 5,step = 1)
     st.subheader("What is showroom price(in VND)?")
@@ -115,25 +117,25 @@ def main():
         result=predicting(Present_Price_l,Kms_Driven,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual)
 
     
-    st.success('Selling Price of your Car : {} L'.format(float(result)*28701700))
-    if st.button("About"):
-        st.text("Car Price Prediction")
-        st.text("WebApp")
+    st.success('Selling Price of ' + car_name + ': {} VND'.format(float(result)*28701700))
+#     if st.button("About"):
+#         st.text("Car Price Prediction")
+#         st.text("WebApp")
 
 
-nav = st.sidebar.radio("Navigate",["Home", "Data", "About Me"])
-if nav == "Home":
-    if __name__=="__main__":
-        main()
+# nav = st.sidebar.radio("Navigate",["Home", "Data", "About Me"])
+# if nav == "Home":
+if __name__=="__main__":
+    main()
 
-if nav == "Data":
-    st.title("Vehicle Dataset")
-    st.subheader("Used Cars Data from Websites")
-    data = pd.read_csv("car data.csv")
-    if st.checkbox("Show Table"):
-        st.table(data)
+# if nav == "Data":
+#     st.title("Vehicle Dataset")
+#     st.subheader("Used Cars Data from Websites")
+#     data = pd.read_csv("car data.csv")
+#     if st.checkbox("Show Table"):
+#         st.table(data)
     
-    plt.show()
+#     plt.show()
 # if nav == "About Us":
 #     st.balloons()
 #     st.title("Swaraj Patil")
