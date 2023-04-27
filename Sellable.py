@@ -38,6 +38,7 @@ def main():
     Year = st.slider("",min_value = 0,max_value=20,value = 5,step = 1)
     st.subheader("What is showroom price(in VND)?")
     Present_Price = st.text_input("","Type Here")
+    Present_Price_l = Present_Price/28701700 
     
 
     st.subheader("How many kilometers drived?")
@@ -111,10 +112,10 @@ def main():
         for percent_complete in range(100):
             time.sleep(0.01)
             my_bar.progress(percent_complete +1)
-        result=predicting(Present_Price,Kms_Driven,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual)
+        result=predicting(Present_Price_l,Kms_Driven,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual)
 
     
-    st.success('Selling Price of your Car : {} L'.format(result))
+    st.success('Selling Price of your Car : {} L'.format(result*28701700))
     if st.button("About"):
         st.text("Car Price Prediction")
         st.text("WebApp")
