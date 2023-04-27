@@ -111,7 +111,7 @@ def main():
         for percent_complete in range(100):
             time.sleep(0.01)
             my_bar.progress(percent_complete +1)
-        Present_Price = Present_Price/28701700
+        Present_Price = Present_Price//28701700
         result=predicting(Present_Price,Kms_Driven,Owner,Year,Fuel_Type_Diesel,Fuel_Type_Petrol,Seller_Type_Individual,Transmission_Mannual)
 
     
