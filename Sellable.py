@@ -37,11 +37,11 @@ def main():
     st.subheader("How old is Your Car")
     Year = st.slider("",min_value = 0,max_value=20,value = 5,step = 1)
     st.subheader("What is showroom price(in VND)?")
-    Present_Price = st.text_input("","Type Here")
+    Present_Price = st.text_input("")
     
 
     st.subheader("How many kilometers drived?")
-    Kms_Driven = st.text_input("","Enter Here")
+    Kms_Driven = st.text_input("")
     
 
     st.subheader("How many owners previously had the car(1/2/3)?")
