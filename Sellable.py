@@ -34,24 +34,24 @@ def main():
 
     st.markdown(html_temp,unsafe_allow_html=True)
     
-    st.subheader("What is the name of your car?")
+    st.subheader("What is the name of your car?/Tên xe của bạn là gì?")
     car_name = st.text_input("","Input Here")
     
-    st.subheader("How old is Your Car")
+    st.subheader("How old is Your Car?/Xe bạn đã đi đưọc bao nhiêu năm?")
     Year = st.slider("",min_value = 0,max_value=20,value = 5,step = 1)
-    st.subheader("What is showroom price(in VND)?")
+    st.subheader("What is showroom price(in VND)?/Giá mua mới hiện tại bao nhiêu?")
     Present_Price = st.text_input("","Type Here")
     Present_Price_l = float(Present_Price)/28701700 
     
 
-    st.subheader("How many kilometers drived?")
+    st.subheader("How many kilometers drived?/Xe đã đi được bao nhiêu cây số?")
     Kms_Driven = st.text_input("","Enter Here")
     
 
-    st.subheader("How many owners previously had the car(1/2/3)?")
+    st.subheader("How many owners previously had the car(1/2/3)?/Xe đã trải qua bao nhiêu đời chủ?")
     Owner = st.selectbox("",range(1,4),0)
     # st.write(Owner)
-    st.subheader("Fual Type")
+    st.subheader("Fual Type/Xe động cơ máy gì?")
     fual = ("Petrol","Diesel", "CNG")
     fual_type = st.radio("", fual)
     if fual_type == "Petrol":
@@ -73,7 +73,7 @@ def main():
     seller = ("Dealer", "Indivisual")
 
     # options = list(range(len(display)))
-    st.subheader("Are you a Dealer or Individual")
+    st.subheader("Are you a Dealer or Individual?/Bạn là người mua cá nhân hay Dealer?")
 
     Seller_Type_Individual = st.radio("",seller)
     if Seller_Type_Individual == "Indivisual":
@@ -91,7 +91,7 @@ def main():
     display = ("Automatic", "Manual")
 
     # options = list(range(len(display)))
-    st.subheader("Transmission Type")
+    st.subheader("Transmission Type/Số sàn hay số tự động")
 
     Transmission_Mannual = st.radio("",display)
     if Transmission_Mannual == "Manual":
